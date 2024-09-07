@@ -4,13 +4,8 @@ namespace BehinVehicleRegistration\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use BehinFileControl\Controllers\FileController;
-use BehinInit\App\Http\Controllers\UniqueIDController;
-use BehinInit\App\Models\Access;
-use Illuminate\Support\Facades\Auth;
-use BehinUserRoles\Models\Method;
 use BehinVehicleRegistration\App\Models\VehicleRegistration;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Test\Constraint\ResponseFormatSame;
 
 class VehicleRegController extends Controller
 {
