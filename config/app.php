@@ -1,5 +1,6 @@
 <?php
 
+use BehinFileControl\BehinFileControlProvider;
 use BehinInit\BehinInitProvider;
 use BehinVehicleRegistration\PackageProviders;
 use Illuminate\Support\Facades\Facade;
@@ -171,7 +172,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         BehinInitProvider::class,
-        PackageProviders::class
+        PackageProviders::class,
+        BehinFileControlProvider::class
     ])->toArray(),
 
     /*

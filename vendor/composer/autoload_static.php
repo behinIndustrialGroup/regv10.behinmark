@@ -197,6 +197,7 @@ class ComposerStaticInit313795403584e50f9b5d6aae3e9fbb30
             'Brick\\Math\\' => 11,
             'BehinVehicleRegistration\\' => 25,
             'BehinInit\\' => 10,
+            'BehinFileControl\\' => 17,
         ),
         'A' => 
         array (
@@ -212,8 +213,8 @@ class ComposerStaticInit313795403584e50f9b5d6aae3e9fbb30
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Whoops\\' => 
         array (
@@ -610,6 +611,10 @@ class ComposerStaticInit313795403584e50f9b5d6aae3e9fbb30
         array (
             0 => __DIR__ . '/../..' . '/packages/behin-init/src',
         ),
+        'BehinFileControl\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/packages/behin-file-control/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -652,11 +657,14 @@ class ComposerStaticInit313795403584e50f9b5d6aae3e9fbb30
         'App\\View\\Components\\AppLayout' => __DIR__ . '/../..' . '/app/View/Components/AppLayout.php',
         'App\\View\\Components\\GuestLayout' => __DIR__ . '/../..' . '/app/View/Components/GuestLayout.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'BehinFileControl\\BehinFileControlProvider' => __DIR__ . '/../..' . '/packages/behin-file-control/src/BehinFileControlProvider.php',
+        'BehinFileControl\\Controllers\\FileController' => __DIR__ . '/../..' . '/packages/behin-file-control/src/Controllers/FileController.php',
         'BehinInit\\App\\Http\\Controllers\\AccessController' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Controllers/AccessController.php',
         'BehinInit\\App\\Http\\Controllers\\LoginController' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Controllers/LoginController.php',
         'BehinInit\\App\\Http\\Controllers\\RandomIDController' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Controllers/RandomIDController.php',
         'BehinInit\\App\\Http\\Controllers\\RegisterUserController' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Controllers/RegisterUserController.php',
         'BehinInit\\App\\Http\\Controllers\\TestController' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Controllers/TestController.php',
+        'BehinInit\\App\\Http\\Controllers\\UniqueIDController' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Controllers/UniqueIDController.php',
         'BehinInit\\App\\Http\\Middleware\\Access' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Middleware/Access.php',
         'BehinInit\\App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Http/Requests/Auth/LoginRequest.php',
         'BehinInit\\App\\Models\\Access' => __DIR__ . '/../..' . '/packages/behin-init/src/App/Models/Access.php',
@@ -7054,9 +7062,7 @@ class ComposerStaticInit313795403584e50f9b5d6aae3e9fbb30
         'Termwind\\ValueObjects\\Style' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Style.php',
         'Termwind\\ValueObjects\\Styles' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Styles.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
-        'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
-        'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',

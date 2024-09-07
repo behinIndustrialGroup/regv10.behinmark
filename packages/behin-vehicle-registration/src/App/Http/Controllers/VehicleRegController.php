@@ -3,21 +3,80 @@
 namespace BehinVehicleRegistration\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use BehinFileControl\Controllers\FileController;
+use BehinInit\App\Http\Controllers\UniqueIDController;
 use BehinInit\App\Models\Access;
 use Illuminate\Support\Facades\Auth;
 use BehinUserRoles\Models\Method;
 use BehinVehicleRegistration\App\Models\VehicleRegistration;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Test\Constraint\ResponseFormatSame;
 
 class VehicleRegController extends Controller
 {
+
+    function getByUniqueID($unique_id) {
+        return VehicleRegistration::where('unique_id', $unique_id)->first();
+    }
 
     function step1(Request $request) {
         $request->validate([
             'firstname' => 'required',
             'lastname' => 'required'
         ]);
-        VehicleRegistration::create($request->all());
-        return "test1";
+        $data = $request->all();
+        $data['unique_id'] = UniqueIDController::create('vehicle_registrations', 'unique_id');
+        $row = VehicleRegistration::create($data);
+        if($row){
+            return response()->json([
+                'status' => 200,
+                'url' => route("vehicleReg.step2Form", ['unique_id'=> $row['unique_id']])
+            ]);
+        }
+        return response(trans(""), 500);
+    }
+
+    public function step2Form($unique_id){
+        $row = $this->getByUniqueID($unique_id);
+        return view('VehicleRegView::register-form-step2')->with([
+            'row' => $row
+        ]);
+    }
+
+    public function step2(Request $request){
+        $row = $this->getByUniqueID($request->unique_id);
+        
+        if(!$row){
+            return response("Error",500);
+        }
+        $row->update($request->all());
+        return response()->json([
+            'status' => 200,
+            'url' => route("vehicleReg.step3Form", ['unique_id'=> $row['unique_id']])
+        ]);
+    }
+
+    public function step3Form($unique_id){
+        return view('VehicleRegView::register-form-step3')->with([
+            'unique_id' => $unique_id
+        ]);
+    }
+
+    public function step3(Request $request){
+        $row = $this->getByUniqueID($request->unique_id);
+        
+        if(!$row){
+            return response("Error",500);
+        }
+        $file = FileController::store($request->file('payment_file'), 'vehicle-registrations-payments');
+        if($file['status'] != 200){
+            return response($file['message'], 500);
+        }
+        $row->payment_file = $file['dir'];
+        $row->save();
+        return response()->json([
+            'status' => 200,
+            'msg' => view('VehicleRegView::partial.payment-success')
+        ]);
     }
 }

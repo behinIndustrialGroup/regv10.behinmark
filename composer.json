@@ -28,7 +28,8 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "BehinInit\\": "packages/behin-init/src/",
-            "BehinVehicleRegistration\\": "packages/behin-vehicle-registration/src/"
+            "BehinVehicleRegistration\\": "packages/behin-vehicle-registration/src/",
+            "BehinFileControl\\": "packages/behin-file-control/src/"
         }
     },
     "autoload-dev": {

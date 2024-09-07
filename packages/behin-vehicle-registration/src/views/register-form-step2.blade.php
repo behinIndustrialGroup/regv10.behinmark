@@ -19,53 +19,26 @@
             <form class="" action="javascript:void(0)" id="registeration-form">
                 <!-- First Name -->
                 <div class="mb-3">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <input type="text" name="firstname" class="form-control" id="firstName" placeholder="Enter your first name">
+                    <input type="hidden" name="unique_id" class="form-control" id="unique_id" value="{{$row->unique_id}}">
                 </div>
 
-                <!-- Last Name -->
-                <div class="mb-3">
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" name="lastname" class="form-control" id="lastName" placeholder="Enter your last name">
-                </div>
-
-                <!-- Nigerian Identification Number -->
-                <div class="mb-3">
-                    <label for="nin" class="form-label">NIN</label>
-                    <input type="text" name="nin" class="form-control" id="nin"
-                        placeholder="Enter your Nigerian Identification Number">
-                </div>
-
-                <!-- Phone Number -->
-                <div class="mb-3">
-                    <label for="phoneNumber" class="form-label">Phone Number</label>
-                    <input type="text" name="phone" class="form-control" id="phoneNumber" pattern="[0-9]{11}" placeholder="e.g., 08039275959">
-                </div>
-
-                <!-- Residence State -->
-                <div class="mb-3">
-                    <label for="residenceState" class="form-label">Residence State</label>
-                    <select class="form-control" name="residence_state" id="state">
-                        @include('VehicleRegView::partial.nig-cities')
-                    </select>
-                </div>
 
                 <!-- Vehicle Manufacturer -->
                 <div class="mb-3">
                     <label for="VehicleMaker" class="form-label">Vehicle Manufacturer</label>
-                    <input type="text" name="vehicle_manufacturer" class="form-control" id="VehicleMaker" placeholder="e.g., Toyota">
+                    <input type="text" value="{{ $row->vehicle_manufacturer }}" name="vehicle_manufacturer" class="form-control" id="VehicleMaker" placeholder="e.g., Toyota">
                 </div>
 
                 <!-- Vehicle Model -->
                 <div class="mb-3">
                     <label for="VehicleModel" class="form-label">Vehicle Model</label>
-                    <input type="text" name="vehicle_model" class="form-control" id="VehicleModel" placeholder="e.g., Corola">
+                    <input type="text" value="{{ $row->vehicle_model }}" name="vehicle_model" class="form-control" id="VehicleModel" placeholder="e.g., Corola">
                 </div>
 
                 <!-- Year of Manufacture -->
                 <div class="mb-3">
                     <label for="year" class="form-label">Year of Manufacture</label>
-                    <input type="number" name="vehicle_year" class="form-control" id="year" placeholder="e.g., 2010">
+                    <input type="number" value="{{ $row->vehicle_year }}" name="vehicle_year" class="form-control" id="year" placeholder="e.g., 2010">
                 </div>
 
                 <!-- Year of Manufacture -->
@@ -80,7 +53,7 @@
                         </div>
                         <div class="col-sm-8">
                             <label for="plateNumber" class="form-label">Plate Number</label>
-                            <input type="text" name="vehicle_reg_number" class="form-control" id="plateNumber" style="text-transform: uppercase;" placeholder="FKJ-254XA">
+                            <input type="text" value="{{ $row->vehicle_reg_number }}" name="vehicle_reg_number" class="form-control" id="plateNumber" style="text-transform: uppercase;" placeholder="FKJ-254XA">
                         </div>
                     </div>
                 </div>
@@ -98,7 +71,7 @@
         function submit_form() {
             var fd = new FormData($('#registeration-form')[0])
             send_ajax_formdata_request(
-                "{{ route('vehicleReg.step1') }}",
+                "{{ route('vehicleReg.step2') }}",
                 fd,
                 function(response) {
                     if(response.status == 200){
