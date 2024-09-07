@@ -60,7 +60,7 @@
 
                 <!-- Submit Button -->
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary" onclick="submit_form()">Submit</button>
+                    <button type="submit" class="btn btn-primary" onclick="submit_form()">Next</button>
                 </div>
             </form>
         </div>
