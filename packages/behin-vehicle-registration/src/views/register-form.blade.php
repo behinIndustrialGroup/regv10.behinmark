@@ -50,41 +50,6 @@
                     </select>
                 </div>
 
-                <!-- Vehicle Manufacturer -->
-                <div class="mb-3">
-                    <label for="VehicleMaker" class="form-label">Vehicle Manufacturer</label>
-                    <input type="text" name="vehicle_manufacturer" class="form-control" id="VehicleMaker" placeholder="e.g., Toyota">
-                </div>
-
-                <!-- Vehicle Model -->
-                <div class="mb-3">
-                    <label for="VehicleModel" class="form-label">Vehicle Model</label>
-                    <input type="text" name="vehicle_model" class="form-control" id="VehicleModel" placeholder="e.g., Corola">
-                </div>
-
-                <!-- Year of Manufacture -->
-                <div class="mb-3">
-                    <label for="year" class="form-label">Year of Manufacture</label>
-                    <input type="number" name="vehicle_year" class="form-control" id="year" placeholder="e.g., 2010">
-                </div>
-
-                <!-- Year of Manufacture -->
-                <div class="mb-3 form-control">
-                    <label for="state" class="form-label">Vehicle Registration Number</label>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <label for="state" class="form-label">State</label>
-                            <select class="form-control" id="state" name="vehicle_reg_state">
-                                @include('VehicleRegView::partial.nig-cities')
-                            </select>
-                        </div>
-                        <div class="col-sm-8">
-                            <label for="plateNumber" class="form-label">Plate Number</label>
-                            <input type="text" name="vehicle_reg_number" class="form-control" id="plateNumber" style="text-transform: uppercase;" placeholder="FKJ-254XA">
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Submit Button -->
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary" onclick="submit_form()">Submit</button>
